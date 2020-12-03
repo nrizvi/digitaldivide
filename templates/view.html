@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Current Requests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/bootstrap-theme.css">
+</head>
+<body>
+<!--     <ul id="navigation">
+    {% for item in navigation %}
+        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+    {% endfor %}
+    </ul> -->
+    <div class="container">
+	    <h1 class="h1">Current Requests</h1>
+	    <p>We have compiled the requests for devices below. Can you help somebody out today?</p>
+	</div>
+	<div class="container">
+		<table class="table">
+		  <tr>
+		    <th>ID</th>
+		    <th>Requester</th>
+		    <th>Mobile</th>
+		    <th>Zip Code</th>
+		    <th>Device Type</th>
+		    <th>Remarks</th>
+		  </tr>
+	    {% for line in data['requests'] %}
+	      <tr>
+		    <td>{{ line['req_id'] }}</td>
+		    <td>{{ line['name'] }}</td>
+		    <td>{{ line['mobile'] }}</td>
+		    <td>{{ line['zipcode'] }}</td>
+		    <td>{{ line['device_type'] }}</td>
+		    <td>{{ line['remarks'] }}</td>
+		  </tr>
+	    {% endfor %}
+		</table>
+	</div>
+
+	<script src="../static/js/jquery-3.5.1.min.js"></script>
+	<script src="../static/js/bootstrap.js"></script>
+
+<!-- 	<script>
+
+	    function submit_message() {
+
+	        var name = document.getElementById("name");
+	        var message = document.getElementById("message");
+
+	        var entry = {
+	            name: name.value,
+	            message: message.value
+	        };
+	    }
+
+	</script> -->
+
+</body>
+</html>

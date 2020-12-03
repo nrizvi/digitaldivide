@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    <p>Thank you for your interest in donating a device! <br>
+    Complete the form below to add it to our database.</p>
+    <!-- change the below line once routing is established  -->
+    <form action="/my-handling-form-page" method="post">
+    	<p>Contact Info</p>
+	    <label for="name">Name:</label>
+	    <input type="text" id="name" name="donor_name">
+	    <br>
+	    <label for="phone">Phone:</label>
+	    <input type="tel" id="phone" name="donor_phone">
+	    <br>
+	    <p>Device Info</p>
+	    <label for="type">Type:</label>
+	    <input list="device-types" id="type" name="device_type" />
+	    <br>
+	    <p>For Smartphones</p>
+	    <label for="smartphone-brand">Brand:</label>
+	    <input list="smartphone-brands" id="smartphone-brand" name="smartphone_brand" />
+	    <br>
+	   	<label for="smartphone-model">Model:</label>
+	    <input type='text' id="snartphone-model" name="smartphone_model"></textarea>
+	    <br>
+	    <p>For Tablets</p>
+	    <label for="tablet-brand">Brand:</label>
+	    <input list="tablet-brands" id="tablet-brand" name="tablet_brand" />
+	    <br>
+	   	<label for="tablet-model">Model:</label>
+	    <input type='text' id="tablet-model" name="tablet_model"></textarea>
+	    <br>
+	    <p>For Laptops</p>
+	    <label for="laptop-brand">Brand:</label>
+	    <input list="laptop-brands" id="laptop-brand" name="laptop_brand" />
+	    <br>
+	   	<label for="laptop-model">Model:</label>
+	    <input type='text' id="laptop-model" name="laptop_model"></textarea>
+	    <br>
+	    <p>Device Details</p>
+	    <label for="condition">Condition:</label>
+	    <input list="device-conditions" id="condition" name="device_condition" />
+	    <br>
+	    <label for="specs">Specs/Details:</label>
+	    <textarea id="specs" name="device_specs"></textarea>
+	    <br>
+	    <label for="photo">Upload a photo (optional):</label>
+		<input type="file"id="photo" name="device_photo" accept="image/jpeg">
+		<br>
+ 		<button type="submit">Submit</button>
+	</form>
+
+	<datalist id="device-types">
+	    <option value="Smartphone">
+	    <option value="Tablet">
+	    <option value="Laptop">
+	</datalist>
+	<datalist id="device-conditions">
+	    <option value="New">
+	    <option value="Used-Good">
+	    <option value="Used-Fair">
+	    <option value="Used-Needs Repairs">
+	</datalist>
+	<datalist id="smartphone-brands">
+	    <option value="Apple">
+	    <option value="Huawei">
+	    <option value="Pixel">
+		<option value="Samsung">
+	</datalist>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+	"requests": [{
+		"req_id": 1,
+		"name": "Bob Adams",
+		"mobile": "(312) 400-9000",
+		"device_type": "mobile",
+		"zipcode": 92092,
+		"remarks": "4GB RAM, 128GB storage"
+	}, {
+		"req_id": 2,
+		"name": "Carol Jones",
+		"mobile": "(912) 001-0000",
+		"device_type": "laptop",
+		"zipcode": 92001,
+		"remarks": "8GB RAM, 128GB storage, 1920x1080"
+	}]
+}
