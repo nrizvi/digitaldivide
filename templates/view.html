@@ -24,7 +24,9 @@
 		    <th>Mobile</th>
 		    <th>Zip Code</th>
 		    <th>Device Type</th>
-		    <th>Remarks</th>
+		    <th>Wifi-Enabled</th>
+		    <th>RAM (GB)</th>
+		    <th>Storage (GB)</th>
 		  </tr>
 	    {% for line in data['requests'] %}
 	      <tr>
@@ -33,7 +35,9 @@
 		    <td>{{ line['mobile'] }}</td>
 		    <td>{{ line['zipcode'] }}</td>
 		    <td>{{ line['device_type'] }}</td>
-		    <td>{{ line['remarks'] }}</td>
+		    <td>{{ line['wifi_enabled'] }}</td>
+		    <td>{{ line['ram'] }}</td>
+		    <td>{{ line['storage'] }}</td>
 		  </tr>
 	    {% endfor %}
 		</table>

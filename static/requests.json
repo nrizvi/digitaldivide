@@ -2,16 +2,38 @@
 	"requests": [{
 		"req_id": 1,
 		"name": "Bob Adams",
-		"mobile": "(312) 400-9000",
+		"mobile": "(312) 407-9080",
 		"device_type": "mobile",
-		"zipcode": 92092,
-		"remarks": "4GB RAM, 128GB storage"
+		"zipcode": 60611,
+		"wifi_enabled": true,
+		"ram": 4,
+		"storage": 128
 	}, {
 		"req_id": 2,
 		"name": "Carol Jones",
-		"mobile": "(912) 001-0000",
+		"mobile": "(912) 001-8563",
+		"device_type": "laptop",
+		"zipcode": 92092,
+		"wifi_enabled": true,
+		"ram": 8,
+		"storage": 1024
+	},{
+		"req_id": 3,
+		"name": "Gabriela Morales",
+		"mobile": "(858) 123-9999",
 		"device_type": "laptop",
 		"zipcode": 92001,
-		"remarks": "8GB RAM, 128GB storage, 1920x1080"
+		"wifi_enabled": true,
+		"ram": 8,
+		"storage": 512
+	},{
+		"req_id": 4,
+		"name": "Social Computing",
+		"mobile": "(858) 842-5833",
+		"device_type": "laptop",
+		"zipcode": 92092,
+		"wifi_enabled": false,
+		"ram": 4,
+		"storage": 256
 	}]
 }
