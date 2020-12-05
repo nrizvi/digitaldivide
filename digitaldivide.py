@@ -9,6 +9,7 @@ import os
 from flask import Flask, Blueprint, render_template, request, make_response, json, jsonify, current_app, abort, redirect
 from twilio.twiml.messaging_response import MessagingResponse
 from twilio.rest import Client
+import json
 
 # Your Account SID from twilio.com/console
 account_sid = "ACd5b292430364bdc60dbbe67c83794dd9"
@@ -36,6 +37,11 @@ def postJsonHandler():
     print (request.is_json)
     content = request.get_json()
     print (content)
+    # get the form from http POST request
+    requester_name = request.form['name']
+    phone_number = request.form['mobile']
+    zipcode = request.form['zipcode']
+    print(request.form)
     return 'JSON posted'
 
 @app.route("/getjson", methods=["GET"])
@@ -44,28 +50,29 @@ def starting_url():
     a_value = json_data["a_key"]
     return "JSON value sent: " + a_value
 
-@app.route('/webhook', methods=['POST'])
-def webhook():
-    if request.method == 'POST':
-        # print(request.json)
-        """Respond to incoming calls with a simple text message."""
-        # Start our TwiML response
-        resp = MessagingResponse()
+# @app.route('/webhook', methods=['POST'])
+# def webhook():
+#     if request.method == 'POST':
+#         """Send a dynamic reply to an incoming text message"""
+#         # Get the message the user sent our Twilio number
+#         # body = request.values.get('Body', None)
+#         from_zip = request.values.get('FromZip', None)
+#         print(from_zip)
+#         response = MessagingResponse()
+#         response.message('This is message 1 of 2.')
+#         response.message('This is message 2 of 2.')
 
-        # Add a message
-        resp.message("The Robots are coming! Head for the hills!")
-        # Grab the relevant phone numbers.
-        # from_number = request.form['From']
-        # to_number = request.form['To']
-        # print the body of the text
-        print(request.form['Body'])
-        # client.messages.create(to=from_number, from_=to_number, messaging_service_sid='MGb70920f205e93db71b6269e37e5c22da',body="...")
-        return str(resp), 200
-    else:
-        abort(400)
+#         # msg.media("https://farm8.staticflickr.com/7090/6941316406_80b4d6d50e_z_d.jpg")
+
+#         # Determine the right reply for this message
+        
+
+#         return str(response), 200
+
+#     else:
+#         abort(400)
 
 # end sample code
-
 
 
 if __name__ == '__main__':
