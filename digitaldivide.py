@@ -24,6 +24,15 @@ def view():
     requests_file = os.path.join(current_app.static_folder, 'requests.json')
     with open (requests_file) as file:
         data = json.load(file)
+        test_dict = {"req_id": 99,
+		"name": "Fergilicious",
+		"mobile": "(858) 123-9999",
+		"device_type": "laptop",
+		"zipcode": 92001,
+		"wifi_enabled": True,
+		"ram": 8,
+		"storage": 512}
+        data['requests'].append(test_dict)
     return render_template('view.html', data=data)
 
 @app.route('/donate')
@@ -42,7 +51,10 @@ def postJsonHandler():
     phone_number = request.form['mobile']
     zipcode = request.form['zipcode']
     print(request.form)
+    test_dict = {'test1':'works'}
+    #data_dict = {'name': requester_name, 'mobile': phone_number, 'zipcode':zipcode}
     return 'JSON posted'
+
 
 @app.route("/getjson", methods=["GET"])
 def starting_url():
